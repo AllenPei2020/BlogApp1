@@ -11,4 +11,8 @@ export class BlogService {
   getFeaturedBlogs() {
     return this.http.get<Blog[]>('https://localhost:7147/api/Blog/featured');
   }
+
+    getBlogs() {
+    return this.http.get<Blog[]>('https://localhost:7147/api/Blog');
+  }
 }

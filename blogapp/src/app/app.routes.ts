@@ -6,5 +6,5 @@ import { Blog } from './pages/blog/blog';
 export const routes: Routes = [
   { path: '', component: Home },
   { path: 'blogs', component: Blogs },
-  { path: 'blog', component: Blog },
+  { path: 'blog/:id', component: Blog },
 ];

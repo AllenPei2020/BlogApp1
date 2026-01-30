@@ -1,12 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { Blog } from '../blog/blog';
+import { CommonModule } from '@angular/common';
+import { Blog } from '../../Models/blog';
 import { BlogService } from '../../blog-service';
+import { RouterLink } from "@angular/router";
+import { BlogCard } from '../blog-card/blog-card';
 
 @Component({
   selector: 'app-home',
-  imports: [MatCardModule, MatButtonModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule, RouterLink,BlogCard],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
@@ -15,7 +18,7 @@ export class Home {
   featuredBlogs!: Blog[];
 
   ngOnInit() {
-    this.blogService.getFeaturedBlogs().subscribe(
+    this.blogService.getBlogs().subscribe(
       (data) => {
         this.featuredBlogs = data;
         console.log(this.featuredBlogs);

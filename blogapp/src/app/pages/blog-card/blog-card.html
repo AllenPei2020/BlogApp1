@@ -1,0 +1,28 @@
+        <mat-card
+          m-1
+          class="example-card"
+          appearance="outlined"
+          [style.backgroundColor]="blog.isFeatured ? 'red' : 'transparent'"
+        >
+          <mat-card-header>
+            <mat-card-title>{{ blog.title }}</mat-card-title>
+          </mat-card-header>
+          <img
+            mat-card-image
+            [src]="blog.image"
+            [alt]="blog.title"
+            width="300"
+            height="200"
+            append-version="true"
+          />
+
+          <mat-card-content>
+            <p>
+              {{ blog.description }}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button matButton routerLink="/blog/{{blog.id}}">ReadMore</button>
+            <button matButton>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
